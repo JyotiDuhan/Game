@@ -1,7 +1,7 @@
 import React, { StrictMode, Component } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { createRoot } from 'react-dom/client';
-import './styles/main.css';
+import './styles/index.css';
 
 import Game from './components/Game';
 import About from './components/About';

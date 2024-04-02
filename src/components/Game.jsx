@@ -71,29 +71,35 @@ export default function Board(){
 	return (
 		<ContestContext.Provider value={winner}>
 			<div>
-				<Link to='/aboutus' className='about-link'>About the game</Link>
-				{winner && <Winner />}
-				<div className='main-container'>
-					<div className='board-wrap'>
-						<div className='board'>
-							<Square onSquareClick={() => insertVal(0)} value={val[0]} />
-							<Square onSquareClick={() => insertVal(1)} value={val[1]} />
-							<Square onSquareClick={() => insertVal(2)} value={val[2]} />
+				{winner ? <Winner />
+					:
+					<>
+						<h1>Tic Tac Toe</h1>
+						
+						<div className='main-container'>
+							<div className='board-wrap'>
+								<div className='board'>
+									<Square onSquareClick={() => insertVal(0)} value={val[0]} />
+									<Square onSquareClick={() => insertVal(1)} value={val[1]} />
+									<Square onSquareClick={() => insertVal(2)} value={val[2]} />
+								</div>
+								<div className='board'>
+									<Square onSquareClick={() => insertVal(3)} value={val[3]} />
+									<Square onSquareClick={() => insertVal(4)} value={val[4]} />
+									<Square onSquareClick={() => insertVal(5)} value={val[5]} />
+								</div>
+								<div className='board'>
+									<Square onSquareClick={() => insertVal(6)} value={val[6]} />
+									<Square onSquareClick={() => insertVal(7)} value={val[7]} />
+									<Square onSquareClick={() => insertVal(8)} value={val[8]} />
+								</div>
+							</div>
+							{/*<button onClick={() => resetBoard()}>Reset</button>*/}
+							<img src={reset} className='reset' onClick={() => resetBoard()} />
 						</div>
-						<div className='board'>
-							<Square onSquareClick={() => insertVal(3)} value={val[3]} />
-							<Square onSquareClick={() => insertVal(4)} value={val[4]} />
-							<Square onSquareClick={() => insertVal(5)} value={val[5]} />
-						</div>
-						<div className='board'>
-							<Square onSquareClick={() => insertVal(6)} value={val[6]} />
-							<Square onSquareClick={() => insertVal(7)} value={val[7]} />
-							<Square onSquareClick={() => insertVal(8)} value={val[8]} />
-						</div>
-					</div>
-					{/*<button onClick={() => resetBoard()}>Reset</button>*/}
-					<img src={reset} className='reset' onClick={() => resetBoard()} />
-				</div>
+						<Link to='/aboutus' className='about-link'>About the game</Link>
+					</>
+				}
 			</div>
 		</ContestContext.Provider>
 	)
